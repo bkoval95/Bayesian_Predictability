@@ -3,12 +3,6 @@
 # VARs estimation
 library(vars) 
 
-# Progress Bar
-library(tcltk)
-
-# Measure the execution time of the function
-library(rbenchmark)
-
 # Bayesian IV package
 library(bayesm)
 
@@ -38,15 +32,6 @@ library(forecast)
 
 # time-series
 library(astsa)
-
-# Fit skew-normal distribution
-library(sn)
-
-# Fit skew-normal distribution
-library(pracma)
-
-# To compute the moments of the distribution
-library(moments)
 
 # For the winsorize function
 library(DescTools)
