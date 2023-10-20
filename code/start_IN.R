@@ -1,7 +1,7 @@
 # Please specify your path to the folder
-path      <- getwd()
+path      <- paste0(getwd(), "/")
 
 # Source packages and functions
-source(paste0(path, "/code/functions_IN.R"))
+source(paste0(path, "code/functions_IN.R"))
 
 
