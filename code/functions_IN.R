@@ -88,6 +88,9 @@ library(tidyverse)
 # For string
 library(stringr) 
 
+# For skewness
+library(moments) 
+
 col_in          <- c("gold", "magenta", "cyan",  "steelblue", "tomato", "green")
 
 shape_in <- c("OLS"  = 3, 

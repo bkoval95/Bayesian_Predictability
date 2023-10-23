@@ -3,7 +3,7 @@ data <- fun.create_data_goyal("annualy")
 
 # Load the prepared data
 
-data <- readRDS(paste0(X, "/data/2.real_data/tbl.goyal_annual_v3.rds"))
+data <- readRDS(paste0(path, "data/2.real_data/tbl.goyal_annual_v3.rds"))
 
 # Choose variables to analyze
 vars_in <- c("b.m", "ep.sp", "tms", "dfy", "dg.sp")
