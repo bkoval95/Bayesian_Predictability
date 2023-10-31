@@ -91,8 +91,11 @@ library(stringr)
 # For skewness
 library(moments) 
 
-# For skewness
+# For RMD
 library(markdown) 
+
+# For RMD
+library(knitr)
 
 col_in          <- c("gold", "magenta", "cyan",  "steelblue", "tomato", "green")
 
