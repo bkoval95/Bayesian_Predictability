@@ -91,6 +91,9 @@ library(stringr)
 # For skewness
 library(moments) 
 
+# For skewness
+library(markdown) 
+
 col_in          <- c("gold", "magenta", "cyan",  "steelblue", "tomato", "green")
 
 shape_in <- c("OLS"  = 3, 
