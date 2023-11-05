@@ -94,11 +94,15 @@ results.beta.2.fixed <- results.fixed_dgp_1$beta_all_methods %>%
          RMSE.dgp_2,
          SAV_med)
 
-results.beta.1.prior
-results.beta.1.fixed
+# Change names for bind_rows
+colnames(results.beta.1.fixed) <- colnames(results.beta.1.prior)
+colnames(results.beta.2.fixed) <- colnames(results.beta.2.prior)
 
-results.beta.2.prior
-results.beta.2.fixed
+bind_rows(results.beta.1.prior,
+          results.beta.1.fixed)
+
+bind_rows(results.beta.2.prior,
+          results.beta.2.fixed)
 
 rm(list = ls())
 
