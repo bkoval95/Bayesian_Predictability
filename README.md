@@ -9,7 +9,8 @@ We share the code to obtain simulated data and financial data. We further provid
 2) functions_IN.R - the file contains the necessary functions to replicate the results.
 3) sim_data_IN.R - the file contains the code to replicate the simulated data and to create the raw results.
 4) real_data_IN.R - the file contains the code to construct the empirical data set, and perform Bayesian parameter estimation and testing.
-5) figures_IN.R - the file contains the code to replicate figures and tables provided in the paper.
+5) figures_IN.Rmd - the file contains the code to replicate figures and tables provided in the paper.
+6) figures_IN.html - the output of the figures_IN.Rmd
 
 **Data**:
 It should be downloaded and added to the main folder
