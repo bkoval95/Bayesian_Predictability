@@ -1,6 +1,6 @@
 # Bayesian-Reconciliation-of-the-Return-Predictability.
 
-This repository contains code for: *"Bayesian Reconciliation of the Return Predictability"* (joint work with [Sylvia Frühwirth-Schnatter](https://www.google.com) and [Leopold Sögner](https://myservice.ihs.ac.at/soegner/)).
+This repository contains code for: *"Bayesian Reconciliation of the Return Predictability"* (joint work with [Sylvia Frühwirth-Schnatter](https://statmath.wu.ac.at/~fruehwirth/) and [Leopold Sögner](https://myservice.ihs.ac.at/soegner/)).
 
 We share the code to obtain simulated data and financial data. We further provide code to replicate Figures and Tables in the paper.
 
