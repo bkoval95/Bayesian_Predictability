@@ -1359,7 +1359,7 @@ fun.oos_estimation <- function(data_in, type, i, window){
   
   # Estimate the model
   res.bayes <- f_Bayesian_control_function_Cholesky_AR_prior_R2(Data             = data_in_sub, 
-                                                                Prior            = Prior_in,
+                                                                Prior            = Prior_cont_ar_in,
                                                                 mc               = MC_draws,
                                                                 burnin           = burnin,
                                                                 start_true_ind   = F,
