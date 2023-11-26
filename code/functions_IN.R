@@ -1334,6 +1334,64 @@ fun.create_result <- function(data_in, level, prior_r2_type){
   
 }
 
+
+# OOS analysis
+fun.oos_estimation <- function(data_in, type, i, window){
+  
+  # Take a subset of the data
+  if(type == "exp"){
+    data_in_sub <- data_in[1:i,]
+    
+  }else if(type == "rol"){
+    data_in_sub <- data_in[(i - window_size):i,]
+    
+  }else{
+    return("Specify the correct type")
+  }
+  
+  # Prepare the data
+  data_in_sub <- list(x_latent   = data_in_sub$x_in[-nrow(data_in_sub)],
+                      y_latent   = data_in_sub$x_in[-1],
+                      x_observe  = data_in_sub$x_in[-nrow(data_in_sub)],
+                      y_observe  = data_in_sub$ret.crsp.l[-1],
+                      dg_observe = NULL)
+  
+  
+  # Estimate the model
+  res.bayes <- f_Bayesian_control_function_Cholesky_AR_prior_R2(Data             = data_in_sub, 
+                                                                Prior            = Prior_in,
+                                                                mc               = MC_draws,
+                                                                burnin           = burnin,
+                                                                start_true_ind   = F,
+                                                                thin             = thining,
+                                                                true_data        = NULL)
+  
+  # Calculate the Returns
+  ret_bay      <- res.bayes$alpha_2 + res.bayes$beta * last(data_in_sub$y_latent)
+  ret_bay_mean <- mean(ret_bay)
+  
+  ret_rbe <- res.bayes$ols_corrected$coefficients[1,1] + 
+    res.bayes$ols_corrected$coefficients[2,1]* last(data_in_sub$y_latent)
+  
+  ret_ols <- res.bayes$ols$coefficients[1,1] + 
+    res.bayes$ols$coefficients[2,1]* last(data_in_sub$y_latent)
+  
+  # We need data_in since it contains future returns as well.
+  ret_fut <- data_in$ret.crsp.l[i+1]
+  
+  # Calculate the Errors
+  errors    <- {}
+  errors[1] <- i
+  errors[2] <- ret_fut
+  errors[3] <- ret_fut - ret_bay_mean
+  errors[4] <- ret_fut - ret_rbe
+  errors[5] <- ret_fut - ret_ols
+  errors[6] <- ret_fut - mean(data_in_sub$y_observe)
+  
+  return(list(errors = errors, res.bayes = res.bayes))
+  
+}
+
 # MAE
 f_mae <- function(res, object, index, true_value){
   
