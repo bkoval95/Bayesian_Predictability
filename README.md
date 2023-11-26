@@ -2,7 +2,7 @@
 
 This repository contains code for: *"Bayesian Reconciliation of the Return Predictability"* (joint work with [Sylvia Frühwirth-Schnatter](https://statmath.wu.ac.at/~fruehwirth/) and [Leopold Sögner](https://myservice.ihs.ac.at/soegner/)).
 
-We share the code to obtain simulated data and financial data. We further provide code to replicate Figures and Tables in the paper.
+We share the code to obtain simulated data and financial data. To receive similar results please change the number of **MC_draws**, **burnin** and **thining** as it's specified in the paper. We further provide code to replicate Figures and Tables in the paper.
 
 **Code**:
 1) start_IN.R - the main file that loads all required packages and functions (from functions_IN.R). Please run first.
